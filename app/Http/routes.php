@@ -3,11 +3,9 @@
 Route::group(['middleware' => ['web']], function () {
 
     #Route::get('/', 'getIndex@GeneratorController');
-    Route::get('/', function () {
-        return 'This is where you can choose to generate lorum ipsum or random users';
-    });
+    Route::get('/', 'GeneratorController@getIndex');
 
-    Route::get('/loremipsum', 'GeneratorController@getLorem');
+    Route::get('/loremipsum', 'GeneratorController@postLorem');
 
     Route::get('/randomuser', 'GeneratorController@getUsers');
 

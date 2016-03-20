@@ -1,3 +1,6 @@
 body {
     font-family: Georgia, serif;
 }
+header, nav, footer {
+    padding-left: 30px;
+}
