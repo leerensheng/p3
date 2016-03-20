@@ -19,9 +19,10 @@
     <?php
         #This code should tell the generator how many paragraphs to display
         if(isset($_POST['numberLorem'])) {
-            $numberParagraphs = $_POST(['numberLorem']);
+            $numberParagraphs = $_POST['numberLorem'];
         }
         else {
+            #This is the default if the user doesn't enter a number
             $numberParagraphs = 3;
         }
 

@@ -10,6 +10,10 @@ class GeneratorController extends Controller {
         return view('welcome');
     }
 
+    public function getLorem() {
+        return view('generators.lorem');
+    }
+
     public function postLorem() {
         return view('generators.lorem');
     }
@@ -18,4 +22,7 @@ class GeneratorController extends Controller {
         return view('generators.randomuser');
     }
 
+    public function postUsers() {
+        return view('generators.randomuser');
+    }
 } #eoc
