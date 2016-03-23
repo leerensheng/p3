@@ -5,19 +5,26 @@
 @stop
 
 @section('content')
-    @if(isset($number))
-        <h1>Show Number: {{ $number }}</h1>
-    @else
-        <h1>No Number chosen</h1>
-    @endif
     <form method='post' action='/loremipsum'>
         {{ csrf_field() }}
-        How many paragraphs? <input type='text' name='numberLorem'>
+        <label>How many paragraphs?</label>
+        <input type='text'
+            name='numberLorem'
+            value='{{ old('numberLorem') }}'
+        >
+        @if(count($errors) > 0)
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        @endif
         <input type='submit' value='Submit'>
     </form>
     <br>
     <?php
         #This code should tell the generator how many paragraphs to display
+        #Move to controller Lines 22-32
         if(isset($_POST['numberLorem'])) {
             $numberParagraphs = $_POST['numberLorem'];
         }
