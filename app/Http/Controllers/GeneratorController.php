@@ -17,11 +17,16 @@ class GeneratorController extends Controller {
     }
 
     public function postLorem(Request $request) {
+
         $this->validate($request, [
             'numberLorem'=>'required|numeric'
         ]);
 
-        return view('generators.lorem');
+        # Here's the Lorem Ipsum generator code
+        $generator = new Badcow\LoremIpsum\Generator();
+        $paragraphs = $generator->getParagraphs($request->input('numberLorem'));
+
+        return view('generators.lorem')->with('paragraphs', $paragraphs);
     }
 
     public function getUsers() {

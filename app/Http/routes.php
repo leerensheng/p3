@@ -11,6 +11,6 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('/randomuser', 'GeneratorController@getUsers');
 
-    Route::post('randomuser', 'GeneratorController@postUsers');
+    Route::post('/randomuser', 'GeneratorController@postUsers');
 
 });
