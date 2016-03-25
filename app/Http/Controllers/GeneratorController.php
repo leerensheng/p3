@@ -31,7 +31,8 @@ class GeneratorController extends Controller {
     }
 
     public function getUsers() {
-        return view('generators.randomuser');
+        $faker = [];
+        return view('generators.randomuser')->with('faker', $faker);
     }
 
     public function postUsers(Request $request) {
@@ -39,6 +40,9 @@ class GeneratorController extends Controller {
             'numberUser'=>'required|numeric'
         ]);
 
-        return view('generators.randomuser');
+        // use the factory to create a Faker\Generator instance
+        $faker = Faker\Factory::create();
+
+        return view('generators.randomuser')->with('faker', $faker);
     }
 } #eoc

@@ -24,13 +24,6 @@
     </form>
 
     <?php
-        $numberUser = "";
-        if(isset($_POST['numberUser'])) {
-            $numberUser = $_POST['numberUser'];
-        }
-
-        // use the factory to create a Faker\Generator instance
-        $faker = Faker\Factory::create();
 
         for ($i=0; $i<$numberUser; $i++) {
             echo $faker->name, "<br>";
