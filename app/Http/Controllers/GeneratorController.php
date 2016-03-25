@@ -12,9 +12,9 @@ class GeneratorController extends Controller {
         return view('welcome');
     }
 
-    public function getLorem($paragraphs) {
-        $paragraphs = null;
-        return view('generators.lorem')->with($paragraphs);
+    public function getLorem() {
+        $paragraphs = [];
+        return view('generators.lorem')->with('paragraphs', $paragraphs);
     }
 
     public function postLorem(Request $request) {
@@ -24,7 +24,7 @@ class GeneratorController extends Controller {
         ]);
 
         # Here's the Lorem Ipsum generator code
-        $generator = new Badcow\LoremIpsum\Generator();
+        $generator = new \Badcow\LoremIpsum\Generator();
         $paragraphs = $generator->getParagraphs($request->input('numberLorem'));
 
         return view('generators.lorem')->with('paragraphs', $paragraphs);
