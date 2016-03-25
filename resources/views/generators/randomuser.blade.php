@@ -24,12 +24,6 @@
     </form>
 
     <?php
-
-        for ($i=0; $i<$numberUser; $i++) {
-            echo $faker->name, "<br>";
-            echo $faker->address, "<br>";
-            echo $faker->text, "<br><br>";
-
-        }
+        $userArray;
     ?>
 @stop
