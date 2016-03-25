@@ -12,8 +12,9 @@ class GeneratorController extends Controller {
         return view('welcome');
     }
 
-    public function getLorem() {
-        return view('generators.lorem');
+    public function getLorem($paragraphs) {
+        $paragraphs = null;
+        return view('generators.lorem')->with($paragraphs);
     }
 
     public function postLorem(Request $request) {
