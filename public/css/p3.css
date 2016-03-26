@@ -1,6 +1,24 @@
 body {
     font-family: Georgia, serif;
+    padding-bottom: 30px;
 }
 header, nav, footer {
     padding-left: 30px;
+}
+header {
+    color: #fb503b;
+    font-family: 'Lato', sans-serif;
+}
+nav {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.15em;
+    padding-bottom: 10px;
+}
+footer {
+    color: white;
+    background-color: #fb503b;
+    font-family: 'Lato', sans-serif;
+}
+td {
+    border: 1px solid black;
 }

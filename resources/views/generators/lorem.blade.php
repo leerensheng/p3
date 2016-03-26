@@ -5,9 +5,12 @@
 @stop
 
 @section('content')
+    <p>Welcome to the Lorem Ipsum Generator!</p>
+    <p>This application will automatically produce Lorem Ipsum paragraphs. Simply enter the number of paragraphs that you would like displayed and hit submit.</p>
     <form method='post' action='/loremipsum'>
         {{ csrf_field() }}
         <label>How many paragraphs?</label>
+        <br>
         <input type='text'
             name='numberLorem'
             value='{{ old('numberLorem') }}'
@@ -19,7 +22,7 @@
                 @endforeach
             </ul>
         @endif
-        <input type='submit' value='Submit'>
+        <input type='submit' value='Generate!'>
     </form>
     <br>
     <?php

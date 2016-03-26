@@ -44,7 +44,7 @@ class GeneratorController extends Controller {
         $faker = \Faker\Factory::create();
 
         $userArray =[];
-        for($i=0; $i<$request->input('numberUsers'); i++){
+        for($i=0; $i<$request->input('numberUser'); $i++){
             $thisUser = [];
             $thisUser['name'] = $faker->name;
             $thisUser['address'] = $faker->address;
@@ -52,6 +52,7 @@ class GeneratorController extends Controller {
             array_push($userArray, $thisUser);
         }
 
+        #dd($userArray);
         return view('generators.randomuser')->with('userArray', $userArray);
     }
 } #eoc
