@@ -5,6 +5,7 @@
 @stop
 
 @section('content')
+    <h2>Random User Generator</h2>
     <p>On this page, you can generate random users! If you are developing a database application, this will for sure be useful.</p>
     <form method='POST' action='/randomuser'>
         {{ csrf_field() }}

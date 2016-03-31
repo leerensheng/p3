@@ -5,6 +5,7 @@
 @stop
 
 @section('content')
+    <h2>Lorem Ipsum Generator</h2>
     <p>Welcome to the Lorem Ipsum Generator!</p>
     <p>This application will automatically produce Lorem Ipsum paragraphs. Simply enter the number of paragraphs that you would like displayed and hit submit.</p>
     <form method='post' action='/loremipsum'>
